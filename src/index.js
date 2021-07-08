@@ -1,5 +1,5 @@
 
-
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import express from 'express';
 import AuthRouter from './routes';
@@ -8,6 +8,7 @@ mongoose.connect('mongodb://ebdbuser:ebdbuserpassword@ds121336.mlab.com:21336/eg
 
 const app= express();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false }))
 app.use(bodyParser.json())
 
